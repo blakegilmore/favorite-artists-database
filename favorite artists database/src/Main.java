@@ -11,8 +11,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in).useDelimiter("\n");
         int x = 0;
 
-
-        while(x<2) {
+        while(true) {
             Artist artist = new Artist();
             System.out.println("Artist: ");
             String input = scanner.next();
@@ -50,7 +49,20 @@ public class Main {
             System.out.println(artist.mostFamousWork);
 
             list.add(artist);
-            x=x+1;
+
+            System.out.println("'add', 'view', 'remove'");
+            input = scanner.next();
+            if(input.equals("view")){
+                System.out.println("enter which artist of " +list.size()+" you want to see.");
+                input = scanner.next();
+                int intInput = Integer.parseInt(input);
+                System.out.println(intInput);
+                if (0 < intInput && intInput < (list.size()+1) ) {
+                    System.out.println(list.get(intInput-1));
+                }
+            } else if(!input.equals("add")){
+                break;
+            }
         }
         for (Object i:list){
             System.out.println(i);
