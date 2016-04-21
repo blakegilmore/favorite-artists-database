@@ -60,6 +60,15 @@ public class Main {
                 if (0 < intInput && intInput < (list.size()+1) ) {
                     System.out.println(list.get(intInput-1));
                 }
+            } else if(input.equals("remove")){
+                System.out.println("which of "+list.size()+" you want to remove.");
+                input = scanner.next();
+                int intInput = Integer.parseInt(input);
+                Artist rmved= list.remove(intInput-1);
+                /// show the element that's been removed
+                System.out.println(rmved);
+                //show the list now that the element's gone
+                System.out.println(list);
             } else if(!input.equals("add")){
                 break;
             }
