@@ -10,6 +10,18 @@ public class Artist {
     String genre;
     String ethnicity;
     String mostFamousWork;
+
+    public String toString() {
+        return "Artist{" +
+                "name=" + name +
+                ", age=" + age +
+                ", instruments=" + instruments +
+                ", genre=" + genre +
+                ", ethnicity=" + ethnicity +
+                ", mostFamousWork=" + mostFamousWork +
+                '\'' +
+                '}';
+    }
 }
 
 

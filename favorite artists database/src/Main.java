@@ -7,10 +7,13 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args){
-        Artist artist = new Artist();
-        Scanner scanner = new Scanner(System.in);
+        ArrayList<Artist> list = new ArrayList<Artist>();
+        Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+        int x = 0;
 
-        while(true) {
+
+        while(x<2) {
+            Artist artist = new Artist();
             System.out.println("Artist: ");
             String input = scanner.next();
             artist.name=input;
@@ -45,6 +48,12 @@ public class Main {
             input = scanner.next();
             artist.mostFamousWork=input;
             System.out.println(artist.mostFamousWork);
+
+            list.add(artist);
+            x=x+1;
+        }
+        for (Object i:list){
+            System.out.println(i);
         }
     }
 }
