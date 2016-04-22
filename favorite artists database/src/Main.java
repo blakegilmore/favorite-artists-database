@@ -12,9 +12,32 @@ public class Main {
         int x = 0;
 
         while(true) {
+            System.out.println("'add', 'view', 'remove'");
+            String input = scanner.next();
+            if(input.equals("view")){
+                System.out.println("enter which artist of " +list.size()+" you want to see.");
+                input = scanner.next();
+                int intInput = Integer.parseInt(input);
+                System.out.println(intInput);
+                if (0 < intInput && intInput < (list.size()+1) ) {
+                    System.out.println(list.get(intInput-1));
+                }
+            } else if(input.equals("remove")){
+                System.out.println("which of "+list.size()+" you want to remove.");
+                input = scanner.next();
+                int intInput = Integer.parseInt(input);
+                Artist rmved= list.remove(intInput-1);
+                /// show the element that's been removed
+                System.out.println(rmved);
+                //show the list now that the element's gone
+                System.out.println(list);
+            } else if(!input.equals("add")){
+                break;
+            }
+
             Artist artist = new Artist();
             System.out.println("Artist: ");
-            String input = scanner.next();
+            input = scanner.next();
             artist.name=input;
             System.out.println(artist.name);
 
